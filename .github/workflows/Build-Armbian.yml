@@ -35,8 +35,10 @@ on:
         required: true
         type: choice
         options:
+          - 'forky'
           - 'trixie'
           - 'bookworm'
+          - 'resolute'
           - 'noble'
           - 'jammy'
       BUILD_DESKTOP:
