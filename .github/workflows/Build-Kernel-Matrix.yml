@@ -9,7 +9,7 @@ on:
         default: 'rockchip64'
         type: string
       BRANCH:
-        description: 'Linux Branch（逗号分隔，例如 current,edge,legacy,vendor）'
+        description: 'Linux Branch（逗号分隔，例如 current,edge,legacy,vendor,flippy）'
         default: 'current'
         required: true
         type: string
@@ -60,7 +60,7 @@ jobs:
               if is_valid_combo(family, branch)
           ]
 
-          max_parallel = 3
+          max_parallel = 6
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
               print(f"matrix={json.dumps({'include': include}, separators=(',', ':'))}", file=fh)

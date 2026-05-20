@@ -100,7 +100,7 @@ jobs:
           boards = parse_csv("BOARD_INPUT")
           branches = parse_csv("BRANCH_INPUT")
           releases = parse_csv("RELEASE_INPUT")
-          max_parallel = 3
+          max_parallel = 6
 
           include = [
               {"board": board, "branch": branch, "release": release}
@@ -123,7 +123,7 @@ jobs:
     needs: Prepare-Matrix
     if: ${{ needs.Prepare-Matrix.outputs.count != '0' }}
     name: Build [ ${{ matrix.board }} ${{ matrix.branch }} ${{ matrix.release }} ]
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04-arm # 默认使用 ARM64 架构，非 ARM64 设备请移除 '-arm'
     strategy:
       fail-fast: false
       max-parallel: ${{ fromJSON(needs.Prepare-Matrix.outputs.max_parallel) }}
