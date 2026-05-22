@@ -12,7 +12,6 @@
 
 ## 🖥️ 支持设备
 - 参考 **Armbian** 官方 [设备列表](https://github.com/armbian/build/tree/main/config/boards)
-- 在 **Build-Armbian.yml** 中添加所需设备，实现构建固件
 
 ---
 
@@ -77,9 +76,9 @@
 
 | 选项 | 说明 | 默认值 | 可选项 |
 | :------: | :------: | :------: | :------: |
-| **Target board** | 目标设备型号 | `nanopct4` | `nanopct4` `rock-5c` `aml-s9xx-box` `手动输入` { [设备列表](https://github.com/armbian/build/tree/main/config/boards) } |
-| **Kernel branch** | 内核分支选择 | `current` | `current`（稳定版） `edge`（测试版） `vendor`（定制版），`手动输入`， 参考 [设备列表](https://github.com/armbian/build/tree/main/config/boards) 文件中 `KERNEL_TARGET` 定义 |
-| **Linux release** | 系统发行版 | `trixie` | `forky`（Debian 14） `trixie`（Debian 13） `bookworm`（Debian 12） `resolute`（Ubuntu 26.04） `noble`（Ubuntu 24.04） `jammy`（Ubuntu 22.04）， `手动输入` |
+| **Target board** | 目标设备型号 | `nanopct4` | `手动输入` `nanopct4` `rock-5c` `aml-s9xx-box` { [设备列表](https://github.com/armbian/build/tree/main/config/boards) } |
+| **Kernel branch** | 内核分支选择 | `current` | `手动输入` `current`（稳定版） `edge`（测试版） `vendor`（定制版） 参考 { [设备列表](https://github.com/armbian/build/tree/main/config/boards) } 中 `KERNEL_TARGET` 定义 |
+| **Linux release** | 系统发行版 | `trixie` | `手动输入` `forky`（Debian 14） `trixie`（Debian 13） `bookworm`（Debian 12） `resolute`（Ubuntu 26.04） `noble`（Ubuntu 24.04） `jammy`（Ubuntu 22.04） |
 | **Build desktop** | 构建桌面版固件 | `no` | `yes`（包含桌面环境） `no`（纯命令行） |
 | **Build minimal** | 构建最小化系统 | `yes` | `yes`（轻量化） `no`（标准系统） |
 | **Build with Docker** | 使用 Docker 构建 | `yes` | `yes`（容器环境） `no`（宿主环境） |

@@ -158,7 +158,7 @@ jobs:
             meson)      BoardFamily="onecloud" ;;
           esac
           [ "${{ matrix.branch }}" = "flippy" ] && EXTRA_ARGS="EXTRAWIFI=no DISABLE_KERNEL_PATCHES=yes" || EXTRA_ARGS=""
-          ./compile.sh kernel BOARD=${BoardFamily} BRANCH=${{ matrix.branch }} PREFER_DOCKER=no DOCKER_ARMBIAN_BASE_IMAGE=ubuntu:noble DEB_COMPRESS=xz SHARE_LOG=yes ${EXTRA_ARGS}
+          ./compile.sh kernel BOARD=${BoardFamily} BRANCH=${{ matrix.branch }} PREFER_DOCKER=yes DOCKER_ARMBIAN_BASE_IMAGE=ubuntu:resolute DEB_COMPRESS=xz SHARE_LOG=yes ${EXTRA_ARGS}
 
       - name: Prepare Kernel Metadata
         working-directory: /mnt/workdir/build/output/debs
