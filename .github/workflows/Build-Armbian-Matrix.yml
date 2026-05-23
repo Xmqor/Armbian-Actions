@@ -67,6 +67,14 @@ on:
         options:
           - 'yes'
           - 'no'
+      RUNNER_LABEL:
+        description: 'GitHub runner'
+        default: 'ubuntu-24.04-arm'
+        required: false
+        type: choice
+        options:
+          - 'ubuntu-24.04-arm'
+          - 'ubuntu-24.04'
 
 env:
   TZ: Asia/Shanghai
@@ -123,7 +131,7 @@ jobs:
     needs: Prepare-Matrix
     if: ${{ needs.Prepare-Matrix.outputs.count != '0' }}
     name: Build [ ${{ matrix.board }} ${{ matrix.branch }} ${{ matrix.release }} ]
-    runs-on: ubuntu-24.04-arm # 默认使用 ARM64 架构，非 ARM64 设备请移除 '-arm'
+    runs-on: ${{ inputs.RUNNER_LABEL }}
     strategy:
       fail-fast: false
       max-parallel: ${{ fromJSON(needs.Prepare-Matrix.outputs.max_parallel) }}
