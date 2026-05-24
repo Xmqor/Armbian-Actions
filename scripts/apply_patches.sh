@@ -71,7 +71,7 @@ if [[ "${BRANCH}" =~ ^(legacy)$ ]]; then
 		declare -g KERNEL_MAJOR_MINOR="6.12"\
 		;;
 		}' config/sources/families/include/meson64_common.inc
-  cp -f ${GITHUB_WORKSPACE}/patch/N1/fix-n1-2.patch patch/kernel/archive/meson64-6.12/
+  cp -f ${GITHUB_WORKSPACE}/patch/N1/fix-n1.patch patch/kernel/archive/meson64-6.12/
 
   sed -i '0,/case \$BRANCH in/{
 	/case \$BRANCH in/a\
@@ -113,8 +113,8 @@ sed -i 's|https://github.com/armbian/linux-rockchip.git|https://github.com/zane-
 
 # N1 Patches
 echo "Copying N1 patches..."
-cp -f ${GITHUB_WORKSPACE}/patch/N1/fix-n1-2.patch patch/kernel/archive/meson64-6.18/
-cp -f ${GITHUB_WORKSPACE}/patch/N1/fix-n1-2.patch patch/kernel/archive/meson64-7.0/
+cp -f ${GITHUB_WORKSPACE}/patch/N1/fix-n1.patch patch/kernel/archive/meson64-6.18/
+cp -f ${GITHUB_WORKSPACE}/patch/N1/fix-n1.patch patch/kernel/archive/meson64-7.0/
 cp -f ${GITHUB_WORKSPACE}/patch/N1/u-boot.ext config/optional/boards/aml-s9xx-box/_packages/bsp-cli/boot/
 
 # X2 Patches
