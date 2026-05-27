@@ -37,8 +37,8 @@
  &cpu_thermal {
  	trips {
  		cpu_warm: cpu_warm {
--			temperature = <55000>;
-+			temperature = <45000>;
+-			temperature = <50000>;
++			temperature = <40000>;
  			hysteresis = <2000>;
  			type = "active";
  		};
